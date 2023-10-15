@@ -7,11 +7,11 @@
 #
 # Then, build the image with:
 #
-# docker build -f src/main/docker/Dockerfile.native -t quarkus/quinoa-bowl .
+# docker build -f src/main/docker/Dockerfile.native -t quarkus/openshift-quino .
 #
 # Then run the container using:
 #
-# docker run -i --rm -p 8080:8080 quarkus/quinoa-bowl
+# docker run -i --rm -p 8080:8080 quarkus/openshift-quino
 #
 ###
 FROM registry.access.redhat.com/ubi8/ubi-minimal:8.8
