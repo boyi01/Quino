@@ -1,27 +1,27 @@
 schemaVersion: 2.2.0
-metadata:java-quinoa
-  name:java-quinoa
+metadata:
+  name: java-quinoa
   version: 1.2.1
   provider: Red Hat
   supportUrl: https://github.com/devfile-samples/devfile-support#support-information
   icon: https://design.jboss.org/quarkus/logo/final/SVG/quarkus_icon_rgb_default.svg
   website: https://quarkus.io
-  displayName: Quarkus Java
-  description: Quarkus with Java
+  displayName: quinoa Java
+  description: quinoa with Java
   tags:
     - Java
-    - Quarkus
-  projectType: Quarkus
+    - quinoa
+  projectType: quinoa
   language: Java
   attributes:
     alpha.dockerimage-port: 8081
 parent:
-  id:java-quinoa
+  id: java-quinoa
   registryUrl: 'https://registry.devfile.io'
 components:
   - name: image-build
     image:
-      imageName:java-quinoa-image:latest
+      imageName: java-quinoa-image:latest
       dockerfile:
         uri: src/main/docker/Dockerfile.jvm.staged
         buildContext: .

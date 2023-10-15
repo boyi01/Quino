@@ -1,19 +1,19 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: my-java-quarkus
+  name: my-java-quinoa
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app:java-quinoa-app
+      app: java-quinoa-app
   template:
     metadata:
       labels:
-        app:java-quinoa-app
+        app: java-quinoa-app
     spec:
       containers:
-        - name: my-java-quarkus
+        - name: my-java-quinoa
           image:java-quinoa-image:latest
           ports:
             - name: http
@@ -27,7 +27,7 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: my-java-quarkus-svc
+  name: my-java-quinoa-svc
 spec:
 ports:
   - name: http-8081
