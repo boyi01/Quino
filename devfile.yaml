@@ -14,7 +14,7 @@ metadata:
   projectType: quinoa
   language: Java
   attributes:
-    alpha.dockerimage-port: 80
+    alpha.dockerimage-port: 8080
 parent:
   id: java-quarkus
   registryUrl: 'https://registry.devfile.io'
@@ -31,12 +31,12 @@ components:
       deployment/replicas: 3
       deployment/cpuRequest: 10m
       deployment/memoryRequest: 100Mi
-      deployment/container-port: 80
+      deployment/container-port: 8080
     kubernetes:
       uri: deploy.yaml
       endpoints:
-        - name: http-80
-          targetPort: 80
+        - name: http-8080
+          targetPort: 8080
           path: /
 commands:
   - id: build-image

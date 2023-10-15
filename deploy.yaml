@@ -17,7 +17,7 @@ spec:
           image: java-quinoa-image:latest
           ports:
             - name: http
-              containerPort: 80
+              containerPort: 8080
               protocol: TCP
           resources:
             requests:
@@ -30,9 +30,9 @@ metadata:
   name: my-java-quinoa-svc
 spec:
 ports:
-  - name: http-80
-    port: 80
+  - name: http-8080
+    port: 8080
     protocol: TCP
-    targetPort: 80
+    targetPort: 8080
 selector:
   app: java-quinoa-app
