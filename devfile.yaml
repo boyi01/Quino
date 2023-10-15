@@ -16,7 +16,7 @@ metadata:
   attributes:
     alpha.dockerimage-port: 8081
 parent:
-  id: java-quinoa
+  id: java-quarkus
   registryUrl: 'https://registry.devfile.io'
 components:
   - name: image-build
