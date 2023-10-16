@@ -22,13 +22,13 @@
                 catDiv.innerHTML = request.responseText;
             }
         }
-        
+        var request2 =  new XMLHttpRequest();
         deleteHome.setAttribute('id', 'delete-btn');
         deleteHome.innerText = "delete listing";
         deleteHome.addEventListener("click", function(event) {  
             if (event.target.id === 'delete-btn') {
-            request.open("DELETE","https://quino-infernalboyi-dev.apps.sandbox-m4.g2pi.p1.openshiftapps.com/message");
-            request.send();
+            request2.open("DELETE","https://quino-infernalboyi-dev.apps.sandbox-m4.g2pi.p1.openshiftapps.com/message");
+            request2.send();
             location.reload;
             }});
             document.body.appendChild(catDiv);
