@@ -18,7 +18,8 @@
         
         function processRequest(e){
             if (request.readyState == 4 && request.status == 200){
-                document.write(request.responseText)
+                var catDiv = document.createElement("div");
+                catDiv.innerHTML = request.responseText;
             }
         }
         
@@ -31,6 +32,7 @@
             })
             location.reload;
             }});
+            document.body.appendChild(catDiv);
             document.body.appendChild(deleteHome);
         
     </script>    
