@@ -10,7 +10,8 @@
 <main class="scene">
     <script>
         var request =  new XMLHttpRequest();
-
+        let deleteHome = document.createElement("button");
+        
         request.addEventListener("readystatechange",processRequest,false);
         request.open("GET","https://quino-infernalboyi-dev.apps.sandbox-m4.g2pi.p1.openshiftapps.com/message");
         request.send();
@@ -20,7 +21,7 @@
                 document.write(request.responseText)
             }
         }
-        let deleteHome = document.createElement("button");
+        
         deleteHome.setAttribute('id', 'delete-btn');
         deleteHome.innerText = "delete listing";
         deleteHome.addEventListener("click", function(event) {  
