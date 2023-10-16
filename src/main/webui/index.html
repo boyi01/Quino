@@ -15,7 +15,7 @@
         request.addEventListener("readystatechange",processRequest,false);
         request.open("GET","https://quino-infernalboyi-dev.apps.sandbox-m4.g2pi.p1.openshiftapps.com/message");
         request.send();
-
+        
         function processRequest(e){
             if (request.readyState == 4 && request.status == 200){
                 document.write(request.responseText)
@@ -31,7 +31,7 @@
             })
             location.reload;
             }});
-        
+            document.body.appendChild(deleteHome);
         
     </script>    
 </main>
