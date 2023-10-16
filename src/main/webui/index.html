@@ -8,15 +8,21 @@
 </head>
 <body>
 <main class="scene">
-    <div class="actor">
-        <div class="actor-prefix">- Quarkus: &nbsp;</div>
-        <div id="Quarkus" class="actor-content"></div>
-    </div>
-    <div class="actor">
-        <div class="actor-prefix">- Me: &nbsp;</div>
-        <div id="Me" class="actor-content"></div>
-    </div>
+    <script>
+        var request =  new XMLHttpRequest();
+
+        request.addEventListener("readystatechange",processRequest,false);
+        request.open("GET","http://first-quarkus:8081/message")
+        request.send();
+
+        function processRequest(e){
+            if (request.readyState == 4 && request.status == 200){
+                document.write(request.responseText)
+            }
+        }
+
+    </script>    
 </main>
-<script type="module" src="/main.js"></script>
+
 </body>
 </html>
