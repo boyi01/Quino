@@ -27,9 +27,8 @@
         deleteHome.innerText = "delete listing";
         deleteHome.addEventListener("click", function(event) {  
             if (event.target.id === 'delete-btn') {
-            fetch("https://quino-infernalboyi-dev.apps.sandbox-m4.g2pi.p1.openshiftapps.com/message", {
-            method: "DELETE",
-            })
+            request.open("DELETE","https://quino-infernalboyi-dev.apps.sandbox-m4.g2pi.p1.openshiftapps.com/message");
+            request.send();
             location.reload;
             }});
             document.body.appendChild(catDiv);
