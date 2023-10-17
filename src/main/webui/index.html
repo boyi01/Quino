@@ -24,14 +24,15 @@
                 catDiv.innerHTML = request.responseText;
             }
         }
-        var request2 =  new XMLHttpRequest();
+        
         deleteHome.setAttribute('id', 'delete-btn');
         deleteHome.innerText = "delete listing";
         deleteHome.addEventListener("click", function(event) {  
             if (event.target.id === 'delete-btn') {
-            request2.open("POST","https://quino-infernalboyi-dev.apps.sandbox-m4.g2pi.p1.openshiftapps.com/message");
-            request2.send(input.textContent);
-            location.reload;
+            request.open("POST","https://quino-infernalboyi-dev.apps.sandbox-m4.g2pi.p1.openshiftapps.com/message");
+            request.send(input.value);
+            request.addEventListener("readystatechange",processRequest,false);
+            request.open("GET","https://quino-infernalboyi-dev.apps.sandbox-m4.g2pi.p1.openshiftapps.com/message");
             request.send();
             }});
         
