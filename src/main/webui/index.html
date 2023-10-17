@@ -10,7 +10,8 @@
 <main class="scene">
     <script>
         var request =  new XMLHttpRequest();
-        let deleteHome = document.createElement("button");
+        let deleteButton = document.createElement("button");
+        let addButton = document.createElement("button");
         let catDiv = document.createElement("div");
         let input = document.createElement("input");
         
@@ -25,20 +26,32 @@
             }
         }
         var request2 =  new XMLHttpRequest();
-        deleteHome.setAttribute('id', 'delete-btn');
-        deleteHome.innerText = "delete listing";
-        deleteHome.addEventListener("click", function(event) {  
+        deleteButton.setAttribute('id', 'delete-btn');
+        deleteButton.innerText = "delete all messages";
+        deleteButton.addEventListener("click", function(event) {  
             if (event.target.id === 'delete-btn') {
+            request2.open("DELETE","https://quino-infernalboyi-dev.apps.sandbox-m4.g2pi.p1.openshiftapps.com/message");
+            request.addEventListener("readystatechange",processRequest,false);
+            request.open("GET","https://quino-infernalboyi-dev.apps.sandbox-m4.g2pi.p1.openshiftapps.com/message");
+            request.send();
+            }});
+        var request3 =  new XMLHttpRequest();
+        addButton.setAttribute('id', 'add');
+        addButton.innerText = "add message";
+        addButton.addEventListener("click", function(event) {  
+            if (event.target.id === 'add') {
             request2.open("POST","https://quino-infernalboyi-dev.apps.sandbox-m4.g2pi.p1.openshiftapps.com/message");
             request2.send(input.value);
             request.addEventListener("readystatechange",processRequest,false);
             request.open("GET","https://quino-infernalboyi-dev.apps.sandbox-m4.g2pi.p1.openshiftapps.com/message");
             request.send();
-            }});
+            }});    
+        
         
             document.body.appendChild(catDiv);
-            document.body.appendChild(deleteHome);
+            document.body.appendChild(deleteButton);
             document.body.appendChild(input);
+            document.body.appendChild(addButton)
         
     </script>    
 </main>
