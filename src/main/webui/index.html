@@ -12,6 +12,8 @@
         var request =  new XMLHttpRequest();
         let deleteHome = document.createElement("button");
         let catDiv = document.createElement("div");
+        let input = document.createElement("input");
+        
         request.addEventListener("readystatechange",processRequest,false);
         request.open("GET","https://quino-infernalboyi-dev.apps.sandbox-m4.g2pi.p1.openshiftapps.com/message");
         request.send();
@@ -28,11 +30,14 @@
         deleteHome.addEventListener("click", function(event) {  
             if (event.target.id === 'delete-btn') {
             request2.open("POST","https://quino-infernalboyi-dev.apps.sandbox-m4.g2pi.p1.openshiftapps.com/message");
-            request2.send("asdasdasd");
+            request2.send(input.textContent);
             location.reload;
+            request.send();
             }});
+        
             document.body.appendChild(catDiv);
             document.body.appendChild(deleteHome);
+            document.body.appendChild(input);
         
     </script>    
 </main>
